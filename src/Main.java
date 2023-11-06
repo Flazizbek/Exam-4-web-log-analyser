@@ -1,13 +1,29 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public  class Main {
+    private static final Logger log = Logger.getLogger(Main.class.getName());
+
+    static {
+        ConsoleHandler handler = new ConsoleHandler();
+        handler.setLevel(Level.WARNING);
+        handler.setFilter(new MyFilter());
+        log.addHandler(handler);
+        log.setUseParentHandlers(false);
+    }
     public static void main(String[] args) throws IOException {
+        log.warning("warning msg");
+        log.info("info msg");
+        log.config("config msg");
+        log.fine("fine msg");
+        log.finer("finer msg");
+        log.finest("finest msg");
+
         ArrayList<String> info = new ArrayList<>();
         ArrayList<String> IP_adress = new ArrayList<>();
         ArrayList<String> userName = new ArrayList<>();
@@ -48,6 +64,14 @@ public  class Main {
                 code.add(matcher5.group());
             }
         }
-
+        BufferedOutputStream bos =new BufferedOutputStream(new FileOutputStream("src/web_traffic_report.txt"));
+        for (int i = 0; i < 4; i++) {
+            bos.write((IP_adress.get(i)+" - mijozning IP manzili.\n").getBytes());
+            bos.write((userName.get(i)+" - foydalanuvchi nomi.\n").getBytes());
+            bos.write((time.get(i)+" - so'rovning vaqti, (naqsh - 2023-11-06 15:45:21).\n").getBytes());
+            bos.write((url.get(i)+" - so'rov URL.\n").getBytes());
+            bos.write((code.get(i)+" - HTTP status codi.\n\n\n").getBytes());
+        }
+        bos.close();
     }
 }
