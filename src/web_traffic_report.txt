@@ -1,0 +1,28 @@
+[192.168.0.100] - mijozning IP manzili.
+[john_doe] - foydalanuvchi nomi.
+[2023-11-06 14:30:45] - so'rovning vaqti, (naqsh - 2023-11-06 15:45:21).
+/api/users - so'rov URL.
+ 200 - HTTP status codi.
+
+
+[10.0.0.5] - mijozning IP manzili.
+[jane_smith] - foydalanuvchi nomi.
+[2023-11-06 15:45:21] - so'rovning vaqti, (naqsh - 2023-11-06 15:45:21).
+/api/data - so'rov URL.
+ 404 - HTTP status codi.
+
+
+[172.16.0.2] - mijozning IP manzili.
+[admin_user] - foydalanuvchi nomi.
+[2023-11-06 16:20:10] - so'rovning vaqti, (naqsh - 2023-11-06 15:45:21).
+/dashboard - so'rov URL.
+ 301 - HTTP status codi.
+
+
+[192.168.1.10] - mijozning IP manzili.
+[user123] - foydalanuvchi nomi.
+[2023-11-06 17:55:30] - so'rovning vaqti, (naqsh - 2023-11-06 15:45:21).
+/images/log.png - so'rov URL.
+ 200 - HTTP status codi.
+
+
